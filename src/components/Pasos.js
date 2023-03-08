@@ -25,7 +25,7 @@ const Pasos = () => {
     }
   return (
     <>
-        <div className="flex justify-between mb-5">
+        <div className="flex justify-between mb-5 gap-2">
             {pasos.map(paso =>(
                 <button
                 onClick={() =>{
@@ -33,7 +33,7 @@ const Pasos = () => {
                    
                 }}
                     key={paso.paso}
-                    className='text-2xl font-bold'
+                    className='text-2xl font-bold bg-amber-500 py-1 px-1 rounded-lg text-white '
                 >
                     {paso.nombre}
                 </button>

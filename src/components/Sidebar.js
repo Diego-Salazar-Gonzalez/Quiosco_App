@@ -8,6 +8,7 @@ const Sidebar = () => {
   return (
     <>
       
+
         <Image
           width={150}
           height={50}
@@ -22,7 +23,9 @@ const Sidebar = () => {
         {categorias.map((categoria) => (
           <Categoria key={categoria.id} categoria={categoria} />
         ))}
+        
       </nav>
+      
     </>
   );
 };

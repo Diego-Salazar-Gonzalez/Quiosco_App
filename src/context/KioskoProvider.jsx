@@ -13,6 +13,7 @@ const KioskoProvider = ({ children }) => {
   const [paso, setPaso] = useState(1);
   const [nombre, setNombre] = useState("");
   const [total, setTotal] = useState(0);
+  const [toggleModal, setToggleModal] = useState(false);
   const router = useRouter();
 
   const obtenerCategorias = async () => {
@@ -23,7 +24,7 @@ const KioskoProvider = ({ children }) => {
     obtenerCategorias();
   }, []);
   useEffect(() => {
-    setCategoriaActual(categorias[0]);
+    setCategoriaActual([0]);
   }, [categorias]);
 
   useEffect(() => {
@@ -109,6 +110,9 @@ const KioskoProvider = ({ children }) => {
     }
     
   };
+  const handleToggleModal = () =>{
+    setToggleModal(!toggleModal)
+  }
 
   return (
     <KioskoContext.Provider
@@ -130,6 +134,8 @@ const KioskoProvider = ({ children }) => {
         setNombre,
         handleColocarOrden,
         total,
+        handleToggleModal,
+        toggleModal
       }}
     >
       {children}
